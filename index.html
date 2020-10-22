@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Assets/style.css">
+    <title>Coding Quiz Challenge</title>
+</head>
+<body>
+    <div class="scores"><a href="hslist.html"></a></div>
+    <div class="timer"><span id="time">0</span></div>
+
+
+    <div class="wrapper">
+        <div id="start-screen" class="start">
+            <h1>JS Quiz</h1>
+            <p>Try to answer....</p>
+            <button id="start">Start the Game!</button>
+        </div>
+
+        <!--Question's display here-->
+        <div id="questions" class="hide">
+            <h3 id="question-title"></h3>
+            <div id="choices"></div>
+        </div>
+        <div id="feedback" class="hide"></div>
+    </div>
+
+
+    <script src="./Assets/questions.js"></script> 
+    <script src="./Assets/logic.js"></script> 
+</body>
+</html>
