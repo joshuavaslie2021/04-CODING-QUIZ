@@ -1,4 +1,4 @@
-var curentQuestionIndex = 0;
+var currentQuestionIndex = 0;
 var startButton = document.getElementById("start")
 var choicesEl = document.getElementById("choices")
 var questionEl = document.getElementById("questions")
@@ -8,6 +8,7 @@ function startQuiz() {
  for (var i = 0; i < questions.length; i++)   {
 
  }
+ // Timer code
  getQuestion();
 }
 
@@ -18,11 +19,31 @@ function getQuestion() {
 
     choicesEl.innerHTML = '';
 
-    currentQuestion.choices.forEach(function(choice, index) {
-        var choiceNode = document.createElement("button")
-        choiceNode.setAttribute("class","choice");
-        choiceNode.setAttribute("value",choice)
+    currentQuestion.choices.forEach(function(choice, i) {
+        var optionButton = document.createElement("button");
+        optionButton.setAttribute("class","choice");
+        optionButton.setAttribute("value", choice);
+        optionButton.onclick = answerClick;
+        optionButton.textContent = choice;
+        choicesEl.appendChild(optionButton)
     })
 }
 
+function answerClick() {
+    if (this.value !== questions[currentQuestionIndex].answer) {
+        feedbackEl.textContent = "Wrong!"
+    }
+    else {
+        feedbackEl.textContent = "Correct!"
+    } 
+    currentQuestionIndex++
+    
+    if (currentQuestionIndex === questions.length) {
+        console.log("game over")   
+    }
+    else {
+ 
+    getQuestion()
+    }
+}
 startButton.onclick = startQuiz
