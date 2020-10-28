@@ -26,3 +26,9 @@ var questions = [
     },  
 
 ]
+var historicalScores = [
+    {
+    initials:"",
+    score:""
+    }
+]

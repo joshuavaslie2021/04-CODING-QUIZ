@@ -4,10 +4,15 @@ var choicesEl = document.getElementById("choices")
 var questionEl = document.getElementById("questions")
 var feedbackEl = document.getElementById("feedback")
 var openingEl = document.getElementById("start-screen")
+var hsEl = document.getElementById("hs-screen")
+var quizTimer = document.getElementById("time")
+var wrapperBox = document.getElementsByClassName("wrapper")
 var userScore = 0
 
 function startQuiz() {
-openingEl.style.visibility = 'hidden'
+questionEl.setAttribute("class","show")
+openingEl.setAttribute("class","hide")
+feedbackEl.setAttribute("class","show")
  for (var i = 0; i < questions.length; i++)   {
 
  }
@@ -58,9 +63,16 @@ function answerClick() {
     currentQuestionIndex++
     
     if (currentQuestionIndex === questions.length) {
-        questionEl.style.visibility = "hidden"
-        
-        feedbackEl.textContent = "you scored " + userScore + " out of " + questions.length + "  correctly"
+        feedbackEl.textContent = "you scored " + userScore + " out of " + questions.length + "  correctly!"
+        var logButton = document.createElement("button")
+        logButton.setAttribute("class","showlogbtn")
+        logButton.setAttribute("id","logButton")
+        logButton.onclick = logScore
+        logButton.textContent = "Log your high score!"
+        questionEl.prepend(logButton)
+        questionEl.setAttribute("class","hide")
+
+
         
       
     }
@@ -69,4 +81,48 @@ function answerClick() {
     getQuestion()
     }
 }
+
+function logScore() {
+logButton.setAttribute("class","hide")
+feedbackEl.setAttribute("class","hide")
+var hsEl = document.createElement("div")
+openingEl.append(hsEl)
+hsEl.setAttribute("id","high-score screen")
+hsEl.setAttribute("class","show")
+
+var hsh1 = document.createElement("h1")
+hsh1.textContent = "Enter your initials to record your score"
+var inputbox = document.createElement("input")
+inputbox.setAttribute("type",'text')
+var scoreDisplay = document.createElement("h2")
+scoreDisplay.textContent = "You scored a " + userScore + " out of 5!"
+var submitScore = document.createElement("button")
+// submitScore.setAttribute("class","btn")
+var retakeQuiz = document.createElement("button")
+retakeQuiz.textContent = "Retake Quiz"
+retakeQuiz.setAttribute("class","btn")
+submitScore.textContent = "Submit"
+submitScore.onclick = updateLocalStorage
+hsEl.appendChild(inputbox)
+hsEl.appendChild(submitScore)
+hsEl.appendChild(scoreDisplay)
+hsEl.appendChild(retakeQuiz)
+retakeQuiz.onclick = startQuiz
+
+function updateLocalStorage() {
+    var newScores = [
+        {initials: inputbox.value,
+         score: userScore   
+        }
+    ]
+  
+    // var localStore = localStorage.getItem("initials","score")
+    // var eachPlay = JSON.parse(historicalScores)
+    
+    localStorage.setItem("Initials1", newScores.initials)
+    localStorage.setItem("Score1", newScores.score)
+}
+
+}
+
 startButton.onclick = startQuiz

@@ -5,3 +5,31 @@
     text-align: right;
     margin-right: 40px;
 }
+.wrapper {
+width: 800px;
+margin:0 auto;
+}
+.choice {
+    border-style: none;
+    width: 800px;
+}
+.logscore{
+    width:800px;
+}
+
+.btn {
+    width: 800px;
+}
+.hide {
+    visibility: hidden;
+}
+.show {
+    visibility: visible;
+}
+.inputbox {
+    width: 500px;;
+}
+.showlogbtn {
+    width: 800px;
+    visibility: visible;
+}
