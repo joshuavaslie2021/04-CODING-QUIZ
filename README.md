@@ -1,11 +1,11 @@
-## NW-HW-03-PASSWORD-GENERATOR
+## NW-HW-04-CODING-QUIZ
 
 ## DESCRIPTION
-
+This week's homework we are assigned with creating a coding quiz that utilizes some of the new javascript tools we are studying. Aside from testing our knowledge in quiz format, we must use this weeks concepts of a timer and decrement, using javascript to create new html elements, and local storage to accomplish the basic features of the page.
 
 ## INSTALLATION
 
-
+The site is deployed at the below link, along with all work stored in my github repository for the project
 
 ## SCREENSHOT
 
@@ -14,7 +14,7 @@
 
 ## LINK TO DEPLOYED APPLICATION    
 
-![Link to deployed application](https://joshuavaslie2021.github.io/03-Password-Generator/index.html)
+<!-- ![Link to deployed application](https://joshuavaslie2021.github.io/03-Password-Generator/index.html) -->
 
 ## USAGE
 
