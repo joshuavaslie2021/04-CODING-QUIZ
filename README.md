@@ -9,12 +9,12 @@ The site is deployed at the below link, along with all work stored in my github 
 
 ## SCREENSHOT
 
-![Image of site mainpage](https://joshuavaslie2021.github.io/03-Password-Generator/Assets/PASSWORD-GENERATOR.png)
+
 
 
 ## LINK TO DEPLOYED APPLICATION    
 
-<!-- ![Link to deployed application](https://joshuavaslie2021.github.io/03-Password-Generator/index.html) -->
+
 
 ## USAGE
 

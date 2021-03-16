@@ -5,7 +5,7 @@ var questionEl = document.getElementById("questions")
 var feedbackEl = document.getElementById("feedback")
 var openingEl = document.getElementById("start-screen")
 var hsEl = document.getElementById("hs-screen")
-var quizTimer = document.getElementById("time")
+var quizTimer = document.getElementById("timer")
 var wrapperBox = document.getElementsByClassName("wrapper")
 var userScore = 0
 
@@ -27,11 +27,13 @@ var start = 75
 
 function startTime() {
     document.getElementById("time").innerHTML = -- start;
-    if (start === 0) {
-        clearInterval(timer)
-        alert("time is up!")
+    if (time === 0 ) {
+        clearInterval(startTime)
+       
+        startTime.setAttribute("class","hide")
         }
     }    
+    
   
 }
 
@@ -97,30 +99,33 @@ inputbox.setAttribute("type",'text')
 var scoreDisplay = document.createElement("h2")
 scoreDisplay.textContent = "You scored a " + userScore + " out of 5!"
 var submitScore = document.createElement("button")
+submitScore.setAttribute("class","localstore")
 // submitScore.setAttribute("class","btn")
 var retakeQuiz = document.createElement("button")
 retakeQuiz.textContent = "Retake Quiz"
 retakeQuiz.setAttribute("class","btn")
 submitScore.textContent = "Submit"
-submitScore.onclick = updateLocalStorage
+submitScore.onclick = updateLocalStorage()
 hsEl.appendChild(inputbox)
 hsEl.appendChild(submitScore)
 hsEl.appendChild(scoreDisplay)
 hsEl.appendChild(retakeQuiz)
 retakeQuiz.onclick = startQuiz
 
-function updateLocalStorage() {
+function updateLocalStorage(userScore) {
     var newScores = [
         {initials: inputbox.value,
          score: userScore   
         }
     ]
-  
-    // var localStore = localStorage.getItem("initials","score")
+    
+
+    localStorage.getItem("Initials1","Score1")
     // var eachPlay = JSON.parse(historicalScores)
     
     localStorage.setItem("Initials1", newScores.initials)
-    localStorage.setItem("Score1", newScores.score)
+    localStorage.setItem("Score1", userScore)
+    console.log(newScores.initials)
 }
 
 }
